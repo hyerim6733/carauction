@@ -25,9 +25,9 @@ asset Car identified by vin {
 }
 
 enum ListingState {
-  o FOR_STATE
-  o RESERVE_NOT_MET
-  o SOLD
+  o FOR_STATE // 판매중
+  o RESERVE_NOT_MET // 요청반려
+  o SOLD // 판매완료
 }
 
 asset CarListing identified by listingId {
@@ -35,7 +35,7 @@ asset CarListing identified by listingId {
   o Double reservePrice
   o String description
   o ListingState state
-  o Offer[] offers optional
+  o Offer[] offers optional // optional 생략가능
   --> Car car
 }
 
